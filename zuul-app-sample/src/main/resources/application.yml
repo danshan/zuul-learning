@@ -8,5 +8,5 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://127.0.0.1:8761/eureka/
+      defaultZone: http://{eureka.host:127.0.0.1}:{eureka.port:8761}/eureka/
 
