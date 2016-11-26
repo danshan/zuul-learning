@@ -8,10 +8,15 @@ eureka:
     non-secure-port-enabled: false
 #    lease-renewal-interval-in-seconds: 10
   client:
-    registerWithEureka: false
-    fetchRegistry: false
+    registerWithEureka: true
+    fetchRegistry: true
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+  turbine:
+    aggregator:
+#      clusterConfig: zuul-app-sample
+    appConfig: zuul-app-sample
 
 spring:
   application:
