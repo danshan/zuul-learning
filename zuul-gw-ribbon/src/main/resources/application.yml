@@ -4,9 +4,6 @@ server:
 eureka:
   instance:
     hostname: localhost
-    secure-port-enabled: false
-    non-secure-port-enabled: false
-#    lease-renewal-interval-in-seconds: 10
   client:
     registerWithEureka: false
     fetchRegistry: false
@@ -15,5 +12,8 @@ eureka:
 
 spring:
   application:
-    name: zuul-gw-eureka
+    name: zuul-gw-riboon
 
+zuul-gw-ribbon:
+  ribbon:
+    listOfServers: www.u51.xin:80,www.baidu.com:80,www.163.com:80,www.csdn.net:80
