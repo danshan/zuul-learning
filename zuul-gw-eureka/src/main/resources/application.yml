@@ -13,11 +13,6 @@ eureka:
     serviceUrl:
       defaultZone: http://${eureka.host:127.0.0.1}:${eureka.port:8761}/eureka/
 
-  turbine:
-    aggregator:
-#      clusterConfig: zuul-app-sample
-    appConfig: zuul-app-sample
-
 spring:
   application:
     name: zuul-gw-eureka
