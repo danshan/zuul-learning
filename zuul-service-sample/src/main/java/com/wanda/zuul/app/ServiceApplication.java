@@ -12,10 +12,10 @@ import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 @SpringBootApplication
 @EnableEurekaClient
 @EnableHystrix
-public class DemoService {
+public class ServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DemoService.class, args);
+        SpringApplication.run(ServiceApplication.class, args);
     }
 
 }

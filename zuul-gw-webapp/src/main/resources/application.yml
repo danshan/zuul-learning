@@ -3,6 +3,14 @@ server:
 
 zuul:
   routes:
-    baidu:
-      path: /fuck/**
-      url: http://baidu.com
+    zuul-app-sample:
+      path: /users/
+      serviceId: zuul-app-sample
+
+ribbon:
+  eureka:
+    enabled: false
+
+client:
+  ribbon:
+    listOfServers: 127.0.0.1:8080, 127.0.0.1:8081
