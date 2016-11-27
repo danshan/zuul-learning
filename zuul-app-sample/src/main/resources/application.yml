@@ -10,3 +10,19 @@ eureka:
     serviceUrl:
       defaultZone: http://${eureka.host:127.0.0.1}:${eureka.port:8761}/eureka/
 
+zuul-app-sample:
+  ribbon:
+    # Max number of retries on the same server (excluding the first try)
+    MaxAutoRetries: 1
+    # Max number of next servers to retry (excluding the first server)
+    MaxAutoRetriesNextServer: 1
+    # Whether all operations can be retried for this client
+    OkToRetryOnAllOperations: true
+    # Interval to refresh the server list from the source
+    ServerListRefreshInterval: 2000
+    # Connect timeout used by Apache HttpClient
+    ConnectTimeout: 3000
+    # Read timeout used by Apache HttpClient
+    ReadTimeout: 3000
+    # Initial list of servers, can be changed via Archaius dynamic property at runtime
+    EnablePrimeConnections: true
