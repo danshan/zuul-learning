@@ -1,0 +1,19 @@
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+spring:
+  application:
+    name: zuul-gw-riboon
+
+zuul-gw-ribbon:
+  ribbon:
+    listOfServers: www.u51.xin:80,www.baidu.com:80,www.163.com:80,www.csdn.net:80

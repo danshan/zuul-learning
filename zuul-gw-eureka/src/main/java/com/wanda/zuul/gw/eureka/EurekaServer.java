@@ -2,13 +2,15 @@ package com.wanda.zuul.gw.eureka;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 import org.springframework.boot.SpringApplication;
+import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
+import org.springframework.cloud.netflix.turbine.EnableTurbine;
 
 @SpringBootApplication
 @EnableEurekaServer
+@EnableHystrixDashboard
+@EnableTurbine
 public class EurekaServer {
     public static void main(String[] args) {
         SpringApplication.run(EurekaServer.class, args);
-        String errorString="emergency! eureka may be incorrectly claiming instances are up when they're not. renewals are lesser than threshold and hence the instances are not being expired just to be safe.";
-        errorString="the self preservation mode is turned off.this may not protect instance expiry in case of network/other problems.";
     }
 }
