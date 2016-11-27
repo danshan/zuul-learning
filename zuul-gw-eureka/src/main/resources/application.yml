@@ -4,14 +4,14 @@ server:
 eureka:
   instance:
     hostname: localhost
-    secure-port-enabled: false
-    non-secure-port-enabled: false
-#    lease-renewal-interval-in-seconds: 10
+    secure-port-enabled: true
+    non-secure-port-enabled: true
+    lease-renewal-interval-in-seconds: 10
   client:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://${eureka.host:127.0.0.1}:${eureka.port:8761}/eureka/
 
   turbine:
     aggregator:
