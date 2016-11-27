@@ -7,9 +7,6 @@ zuul:
       path: /users/**
       serviceId: zuul-service-sample
       stripPrefix: false
-    shanhh:
-      path: /shanhh/**
-      url: http://www.shanhh.com
 
 zuul-service-sample:
   ribbon:
