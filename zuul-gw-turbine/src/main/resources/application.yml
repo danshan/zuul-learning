@@ -9,7 +9,7 @@ eureka:
 turbine:
   aggregator:
     clusterConfig: SYSTEM
-  appConfig: zuul-app-sample
+  appConfig: zuul-service-sample
 
 spring:
   application:

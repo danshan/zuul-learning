@@ -25,7 +25,6 @@ public class UserService {
     public User getUserById(
             @PathVariable("userId") int userId
     ) {
-        System.out.println("receive request");
         if (System.currentTimeMillis() % 3 == 0) {
             throw new IllegalStateException("auto failed");
         }
