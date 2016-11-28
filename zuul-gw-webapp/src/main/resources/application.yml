@@ -1,16 +1,7 @@
 server:
-  port: 8761
+  port: 8888
 
 zuul:
-  filter:
-    pre:
-      path: pre
-    routing:
-      path: route
-    post:
-      path: post
-    custom:
-      path: custom
 
   routes:
     zuul-service-sample:
@@ -20,7 +11,7 @@ zuul:
 
 zuul-service-sample:
   ribbon:
-    listOfServers: 127.0.0.1:9090
+#    listOfServers: 127.0.0.1:9090
     # Max number of retries on the same server (excluding the first try)
     MaxAutoRetries: 1
     # Max number of next servers to retry (excluding the first server)
@@ -36,10 +27,6 @@ zuul-service-sample:
     # Initial list of servers, can be changed via Archaius dynamic property at runtime
     EnablePrimeConnections: true
 
-ribbon:
-  eureka:
-    enabled: false
-
 eureka:
   instance:
     hostname: localhost
@@ -47,8 +34,8 @@ eureka:
     non-secure-port-enabled: true
     lease-renewal-interval-in-seconds: 10
   client:
-    registerWithEureka: false
-    fetchRegistry: false
+    registerWithEureka: true
+    fetchRegistry: true
     serviceUrl:
       defaultZone: http://${eureka.host:127.0.0.1}:${eureka.port:8761}/eureka/
 
